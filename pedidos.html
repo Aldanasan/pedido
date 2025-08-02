@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAIA Beach Club - Pedido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            color: #1e3d58;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-field {
+            margin-bottom: 15px;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .button {
+            background-color: #1e3d58;
+            color: white;
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #184a6b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>MAIA Beach Club - Pedido</h1>
+        <form action="https://wa.me/529841864937" method="get" target="_blank">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" class="input-field" placeholder="Escribe tu nombre" required>
+
+            <label for="table">Número de mesa:</label>
+            <input type="text" id="table" name="table" class="input-field" placeholder="Escribe tu número de mesa" required>
+
+            <label for="order">Selecciona tus platillos:</label>
+            <textarea id="order" name="order" class="input-field" placeholder="Escribe lo que vas a pedir, separando cada platillo por coma..." rows="5" required></textarea>
+
+            <button type="submit" class="button">Enviar pedido</button>
+        </form>
+    </div>
+
+</body>
+</html>
