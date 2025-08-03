@@ -16,7 +16,7 @@
   .checkbox-group { margin-left: 15px; }
   .checkbox-group label { font-weight: 400; display: block; margin-bottom: 6px; cursor: pointer; }
   .platillo-container { margin-bottom: 10px; }
-  .comentario-platillo { margin-left: 30px; margin-top: 3px; display: none; }
+  .comentario-platillo { margin-left: 30px; margin-top: 3px; display: none; font-size: 0.9rem; font-style: italic; }
   button { margin-top: 25px; background-color: #f5826f; color: white; border: none; font-weight: 700; font-size: 1.1rem; padding: 12px 20px; border-radius: 8px; cursor: pointer; width: 100%; transition: background-color 0.3s ease; }
   button:hover { background-color: #d8654f; }
   .note { font-size: 0.9rem; color: #555; text-align: center; margin-top: 15px; }
@@ -50,8 +50,9 @@
   <label id="labelMesa" for="mesa">Número de mesa o camastro *</label>
   <input type="text" id="mesa" name="mesa" required placeholder="Mesa o camastro" />
 
+  <!-- Sección Desayunos Lo dulce -->
   <div class="section">
-    <h2 id="sectionDesayuno">Desayunos – Lo dulce</h2>
+    <h2 id="sectionDesayunoDulce">Desayunos – Lo dulce</h2>
     <div class="checkbox-group" id="desayunoDulce">
       <div class="platillo-container">
         <label><input type="checkbox" name="platillo" value="Plato de fruta"> <span class="platillo-text">Plato de fruta</span></label>
@@ -61,17 +62,342 @@
         <label><input type="checkbox" name="platillo" value="Overnight Oats Jar"> <span class="platillo-text">Overnight Oats Jar</span></label>
         <textarea class="comentario-platillo" placeholder="Comentarios para Overnight Oats Jar..."></textarea>
       </div>
-      <!-- Agrega más platillos aquí igual -->
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Pan Frances"> <span class="platillo-text">Pan Frances</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Pan Frances..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Toast de masa madre con mantequilla de mani"> <span class="platillo-text">Toast de masa madre con mantequilla de mani</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Toast de masa madre con mantequilla de mani..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Hotcakes"> <span class="platillo-text">Hotcakes</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Hotcakes..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Hotcakes con coco"> <span class="platillo-text">Hotcakes con coco</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Hotcakes con coco..."></textarea>
+      </div>
     </div>
   </div>
 
-  <!-- Más secciones aquí con el mismo patrón -->
+  <!-- Sección Desayunos Huevos -->
+  <div class="section">
+    <h2 id="sectionDesayunoHuevos">Desayunos – Huevos</h2>
+    <div class="checkbox-group" id="desayunoHuevos">
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Huevos al gusto"> <span class="platillo-text">Huevos al gusto</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Huevos al gusto..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Huevos Cazuela"> <span class="platillo-text">Huevos Cazuela</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Huevos Cazuela..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Huevos Cazuela con longaniza"> <span class="platillo-text">Huevos Cazuela con longaniza</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Huevos Cazuela con longaniza..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Huevos Cazuela con arrachera"> <span class="platillo-text">Huevos Cazuela con arrachera</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Huevos Cazuela con arrachera..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Huevos Black Fiore"> <span class="platillo-text">Huevos Black Fiore</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Huevos Black Fiore..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Huevos Black Fiore (tofu)"> <span class="platillo-text">Huevos Black Fiore (tofu)</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Huevos Black Fiore (tofu)..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Croque Madame"> <span class="platillo-text">Croque Madame</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Croque Madame..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Huevos Rotos"> <span class="platillo-text">Huevos Rotos</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Huevos Rotos..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Omelette de Jamón y Queso"> <span class="platillo-text">Omelette de Jamón y Queso</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Omelette de Jamón y Queso..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Omelette Maia"> <span class="platillo-text">Omelette Maia</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Omelette Maia..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Desayunos Salados -->
+  <div class="section">
+    <h2 id="sectionDesayunoSalados">Desayunos – Salados</h2>
+    <div class="checkbox-group" id="desayunoSalados">
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Enchiladas/Enfrijoladas"> <span class="platillo-text">Enchiladas/Enfrijoladas</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Enchiladas/Enfrijoladas..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Quesadillas"> <span class="platillo-text">Quesadillas</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Quesadillas..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Chilaquiles"> <span class="platillo-text">Chilaquiles</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Chilaquiles..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Tacos con Chorizo Vegano"> <span class="platillo-text">Tacos con Chorizo Vegano</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Tacos con Chorizo Vegano..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Avo Toast"> <span class="platillo-text">Avo Toast</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Avo Toast..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Molletes"> <span class="platillo-text">Molletes</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Molletes..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Almuerzo y Cena - Tacos -->
+  <div class="section">
+    <h2 id="sectionTacos">Almuerzo y Cena – Tacos</h2>
+    <div class="checkbox-group" id="tacos">
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Tacos de cochinita"> <span class="platillo-text">Tacos de cochinita</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Tacos de cochinita..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Tacos de camarón tempura"> <span class="platillo-text">Tacos de camarón tempura</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Tacos de camarón tempura..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Tacos gobernador"> <span class="platillo-text">Tacos gobernador</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Tacos gobernador..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Guacamoles -->
+  <div class="section">
+    <h2 id="sectionGuacamoles">Guacamoles</h2>
+    <div class="checkbox-group" id="guacamoles">
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Guacamole vegano"> <span class="platillo-text">Guacamole vegano</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Guacamole vegano..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Guacamole con mango"> <span class="platillo-text">Guacamole con mango</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Guacamole con mango..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Guacamole con castacán"> <span class="platillo-text">Guacamole con castacán</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Guacamole con castacán..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Guacamole con chicharrón de cerdo"> <span class="platillo-text">Guacamole con chicharrón de cerdo</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Guacamole con chicharrón de cerdo..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Ensaladas -->
+  <div class="section">
+    <h2 id="sectionEnsaladas">Ensaladas</h2>
+    <div class="checkbox-group" id="ensaladas">
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Ensalada de Manzana"> <span class="platillo-text">Ensalada de Manzana</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Ensalada de Manzana..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Ensalada de Pera"> <span class="platillo-text">Ensalada de Pera</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Ensalada de Pera..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Ensalada César"> <span class="platillo-text">Ensalada César</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Ensalada César..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Ensalada de Falafel"> <span class="platillo-text">Ensalada de Falafel</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Ensalada de Falafel..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Bowls -->
+  <div class="section">
+    <h2 id="sectionBowls">Bowls</h2>
+    <div class="checkbox-group" id="bowls">
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Bowl Vegetariano"> <span class="platillo-text">Bowl Vegetariano</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Bowl Vegetariano..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Bowl Camarones Tempura"> <span class="platillo-text">Bowl Camarones Tempura</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Bowl Camarones Tempura..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Bowl Pollo al Chipotle"> <span class="platillo-text">Bowl Pollo al Chipotle</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Bowl Pollo al Chipotle..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Principales -->
+  <div class="section">
+    <h2 id="sectionPrincipales">Principales</h2>
+    <div class="checkbox-group" id="principales">
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Pescado a la talla"> <span class="platillo-text">Pescado a la talla</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Pescado a la talla..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Pollo al pastor"> <span class="platillo-text">Pollo al pastor</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Pollo al pastor..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Salmon"> <span class="platillo-text">Salmon</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Salmon..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Pechuga con mole"> <span class="platillo-text">Pechuga con mole</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Pechuga con mole..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Rib Eye"> <span class="platillo-text">Rib Eye</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Rib Eye..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Ensalada de pollo"> <span class="platillo-text">Ensalada de pollo</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Ensalada de pollo..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Sándwiches y Hamburguesas -->
+  <div class="section">
+    <h2 id="sectionSandwiches">Sándwiches y Hamburguesas</h2>
+    <div class="checkbox-group" id="sandwiches">
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Sándwich de pollo"> <span class="platillo-text">Sándwich de pollo</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Sándwich de pollo..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Hamburguesa de camarón"> <span class="platillo-text">Hamburguesa de camarón</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Hamburguesa de camarón..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Hamburguesa de res"> <span class="platillo-text">Hamburguesa de res</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Hamburguesa de res..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Hamburguesa vegetariana"> <span class="platillo-text">Hamburguesa vegetariana</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Hamburguesa vegetariana..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Botanas -->
+  <div class="section">
+    <h2 id="sectionBotanas">Botanas</h2>
+    <div class="checkbox-group" id="botanas">
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Elote con chile y queso"> <span class="platillo-text">Elote con chile y queso</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Elote con chile y queso..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Totopos con queso fundido"> <span class="platillo-text">Totopos con queso fundido</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Totopos con queso fundido..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Totopos con guacamole"> <span class="platillo-text">Totopos con guacamole</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Totopos con guacamole..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Extras -->
+  <div class="section">
+    <h2 id="sectionExtras">Extras</h2>
+    <div class="checkbox-group" id="extras">
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Papas a la francesa"> <span class="platillo-text">Papas a la francesa</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Papas a la francesa..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Arroz"> <span class="platillo-text">Arroz</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Arroz..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Frijoles"> <span class="platillo-text">Frijoles</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Frijoles..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Postres -->
+  <div class="section">
+    <h2 id="sectionPostres">Postres</h2>
+    <div class="checkbox-group" id="postres">
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Flan"> <span class="platillo-text">Flan</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Flan..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Pastel de queso"> <span class="platillo-text">Pastel de queso</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Pastel de queso..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Pay de limón"> <span class="platillo-text">Pay de limón</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Pay de limón..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Paletas heladas"> <span class="platillo-text">Paletas heladas</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Paletas heladas..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú infantil -->
+  <div class="section">
+    <h2 id="sectionInfantil">Menú Infantil</h2>
+    <div class="checkbox-group" id="menuInfantil">
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Deditos de queso"> <span class="platillo-text">Deditos de queso</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Deditos de queso..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Nuggets veganos"> <span class="platillo-text">Nuggets veganos</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Nuggets veganos..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Pasta kit"> <span class="platillo-text">Pasta kit</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Pasta kit..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Quesadilla"> <span class="platillo-text">Quesadilla</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Quesadilla..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Tiras de pollo"> <span class="platillo-text">Tiras de pollo</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Tiras de pollo..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Hummus"> <span class="platillo-text">Hummus</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Hummus..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Paletas heladas"> <span class="platillo-text">Paletas heladas</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Paletas heladas..."></textarea>
+      </div>
+    </div>
+  </div>
 
   <label id="labelComentariosGenerales" for="comentarios">Comentarios generales</label>
-  <textarea id="comentarios" name="comentarios" placeholder="Sin cebolla, poco picante, etc."></textarea>
+  <textarea id="comentarios" name="comentarios" placeholder="Ingrese comentario."></textarea>
 
   <label id="labelNumero" for="numeroDestino">Número WhatsApp para enviar el pedido *</label>
-  <input type="text" id="numeroDestino" name="numeroDestino" placeholder="Ejemplo: 5219841864937" required />
+  <input type="text" id="numeroDestino" name="numeroDestino" placeholder="Ejemplo: 52123456789" required />
 
   <button type="submit" id="btnEnviar">Enviar pedido por WhatsApp</button>
 
@@ -79,7 +405,7 @@
 </form>
 
 <script>
-  // Manejar mostrar/ocultar textarea comentario por platillo
+  // Mostrar/ocultar textarea comentario por platillo
   document.querySelectorAll('.platillo-container input[type=checkbox]').forEach(chk => {
     chk.addEventListener('change', e => {
       const textarea = e.target.closest('.platillo-container').querySelector('.comentario-platillo');
@@ -95,7 +421,19 @@
       horarios: "Horarios: Desayuno 8:00 - 12:30 | Almuerzo/Cena desde 13:15",
       labelNombre: "Nombre del cliente *",
       labelMesa: "Número de mesa o camastro *",
-      sectionDesayuno: "Desayunos – Lo dulce",
+      sectionDesayunoDulce: "Desayunos – Lo dulce",
+      sectionDesayunoHuevos: "Desayunos – Huevos",
+      sectionDesayunoSalados: "Desayunos – Salados",
+      sectionTacos: "Almuerzo y Cena – Tacos",
+      sectionGuacamoles: "Guacamoles",
+      sectionEnsaladas: "Ensaladas",
+      sectionBowls: "Bowls",
+      sectionPrincipales: "Principales",
+      sectionSandwiches: "Sándwiches y Hamburguesas",
+      sectionBotanas: "Botanas",
+      sectionExtras: "Extras",
+      sectionPostres: "Postres",
+      sectionInfantil: "Menú Infantil",
       labelComentariosGenerales: "Comentarios generales",
       labelNumero: "Número WhatsApp para enviar el pedido *",
       btnEnviar: "Enviar pedido por WhatsApp",
@@ -109,7 +447,19 @@
       horarios: "Hours: Breakfast 8:00am - 12:30pm | Lunch/Dinner from 1:15pm",
       labelNombre: "Customer name *",
       labelMesa: "Table or sunbed number *",
-      sectionDesayuno: "Breakfast – Sweet",
+      sectionDesayunoDulce: "Breakfast – Sweet",
+      sectionDesayunoHuevos: "Breakfast – Eggs",
+      sectionDesayunoSalados: "Breakfast – Savory",
+      sectionTacos: "Lunch and Dinner – Tacos",
+      sectionGuacamoles: "Guacamoles",
+      sectionEnsaladas: "Salads",
+      sectionBowls: "Bowls",
+      sectionPrincipales: "Main dishes",
+      sectionSandwiches: "Sandwiches and Burgers",
+      sectionBotanas: "Appetizers",
+      sectionExtras: "Extras",
+      sectionPostres: "Desserts",
+      sectionInfantil: "Kids menu",
       labelComentariosGenerales: "General comments",
       labelNumero: "WhatsApp number to send order *",
       btnEnviar: "Send order via WhatsApp",
@@ -127,7 +477,19 @@
     document.getElementById('horarios').textContent = texts[lang].horarios;
     document.getElementById('labelNombre').textContent = texts[lang].labelNombre;
     document.getElementById('labelMesa').textContent = texts[lang].labelMesa;
-    document.getElementById('sectionDesayuno').textContent = texts[lang].sectionDesayuno;
+    document.getElementById('sectionDesayunoDulce').textContent = texts[lang].sectionDesayunoDulce;
+    document.getElementById('sectionDesayunoHuevos').textContent = texts[lang].sectionDesayunoHuevos;
+    document.getElementById('sectionDesayunoSalados').textContent = texts[lang].sectionDesayunoSalados;
+    document.getElementById('sectionTacos').textContent = texts[lang].sectionTacos;
+    document.getElementById('sectionGuacamoles').textContent = texts[lang].sectionGuacamoles;
+    document.getElementById('sectionEnsaladas').textContent = texts[lang].sectionEnsaladas;
+    document.getElementById('sectionBowls').textContent = texts[lang].sectionBowls;
+    document.getElementById('sectionPrincipales').textContent = texts[lang].sectionPrincipales;
+    document.getElementById('sectionSandwiches').textContent = texts[lang].sectionSandwiches;
+    document.getElementById('sectionBotanas').textContent = texts[lang].sectionBotanas;
+    document.getElementById('sectionExtras').textContent = texts[lang].sectionExtras;
+    document.getElementById('sectionPostres').textContent = texts[lang].sectionPostres;
+    document.getElementById('sectionInfantil').textContent = texts[lang].sectionInfantil;
     document.getElementById('labelComentariosGenerales').textContent = texts[lang].labelComentariosGenerales;
     document.getElementById('labelNumero').textContent = texts[lang].labelNumero;
     document.getElementById('btnEnviar').textContent = texts[lang].btnEnviar;
@@ -138,10 +500,9 @@
     updateLanguage(e.target.value);
   });
 
-  // Inicializo idioma en español
   updateLanguage('es');
 
-  // Enviar pedido por WhatsApp, con comentarios por platillo incluidos
+  // Enviar pedido por WhatsApp
   document.getElementById('pedidoForm').addEventListener('submit', e => {
     e.preventDefault();
 
@@ -149,9 +510,18 @@
     const nombre = document.getElementById('nombre').value.trim();
     const mesa = document.getElementById('mesa').value.trim();
     const comentariosGenerales = document.getElementById('comentarios').value.trim();
-    const numeroDestino = document.getElementById('numeroDestino').value.trim().replace(/\D/g, '');
+    let numeroDestino = document.getElementById('numeroDestino').value.trim();
 
-    // Obtengo platillos seleccionados y comentarios individuales
+    // Quitar todo lo que no sea número para número de WhatsApp
+    numeroDestino = numeroDestino.replace(/\D/g, '');
+
+    // Valido campos básicos
+    if (!nombre || !mesa || !numeroDestino) {
+      alert(texts[lang].alertaCompletar);
+      return;
+    }
+
+    // Recolectar platillos seleccionados + comentarios
     const platillosContainers = [...document.querySelectorAll('.platillo-container')];
     const platillosSeleccionados = [];
 
@@ -164,46 +534,46 @@
       }
     });
 
-    if (!nombre || !mesa || !numeroDestino) {
-      alert(texts[lang].alertaCompletar);
-      return;
-    }
-
     if (platillosSeleccionados.length === 0) {
       alert(texts[lang].alertaPlatillo);
       return;
     }
 
-    let mensaje = lang === 'es'
-      ? `*Pedido Maia Restaurante & Beach Club*\n`
-      : `*Order Maia Restaurant & Beach Club*\n`;
+    // Construir mensaje para WhatsApp
+    let mensaje = `*${texts[lang].title}*\n`;
+    mensaje += `*${texts[lang].labelNombre}* ${nombre}\n`;
+    mensaje += `*${texts[lang].labelMesa}* ${mesa}\n\n`;
+    mensaje += `*${lang === 'es' ? 'Pedido' : 'Order'}:*\n`;
 
-    mensaje += lang === 'es'
-      ? `*Nombre:* ${nombre}\n*Mesa/Camastro:* ${mesa}\n*Pedido:*\n`
-      : `*Name:* ${nombre}\n*Table/Sunbed:* ${mesa}\n*Order:*\n`;
-
-    platillosSeleccionados.forEach(p => {
+    platillosSeleccionados.forEach((p, i) => {
       mensaje += `- ${p.nombre}`;
       if (p.comentario) {
-        mensaje += ` (${p.comentario})`;
+        mensaje += ` (${lang === 'es' ? 'Comentario' : 'Comment'}: ${p.comentario})`;
       }
       mensaje += `\n`;
     });
 
     if (comentariosGenerales) {
-      mensaje += lang === 'es'
-        ? `\n*Comentarios generales:* ${comentariosGenerales}`
-        : `\n*General comments:* ${comentariosGenerales}`;
+      mensaje += `\n*${texts[lang].labelComentariosGenerales}*\n${comentariosGenerales}\n`;
     }
 
-    const mensajeCodificado = encodeURIComponent(mensaje);
-    const url = `https://wa.me/${numeroDestino}?text=${mensajeCodificado}`;
-    window.open(url, '_blank');
+    // URL encode para WhatsApp
+    const encodedMensaje = encodeURIComponent(mensaje);
+
+    // Formato número WhatsApp +521...
+    if (!numeroDestino.startsWith('521')) {
+      numeroDestino = '521' + numeroDestino.replace(/^0+/, ''); // Remover ceros a la izquierda y agregar 521
+    }
+
+    const whatsappUrl = `https://wa.me/${numeroDestino}?text=${encodedMensaje}`;
+
+    window.open(whatsappUrl, '_blank');
   });
 </script>
 
 </body>
 </html>
+
 
 
 
