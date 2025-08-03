@@ -296,32 +296,29 @@
     return;
   }
 
-  // Armamos el mensaje
-  let mensaje = `*Pedido Maia Restaurante & Beach Club*%0A`;
-  mensaje += `*Nombre:* ${encodeURIComponent(nombre)}%0A`;
-  mensaje += `*Mesa/Camastro:* ${encodeURIComponent(mesa)}%0A`;
-  mensaje += `*Pedido:*%0A`;
+  let mensaje = `*Pedido Maia Restaurante & Beach Club*\n`;
+  mensaje += `*Nombre:* ${nombre}\n`;
+  mensaje += `*Mesa/Camastro:* ${mesa}\n`;
+  mensaje += `*Pedido:*\n`;
 
-  // Agregamos los platillos
   platillosSeleccionados.forEach(p => {
-    mensaje += `- ${encodeURIComponent(p)}%0A`;
+    mensaje += `- ${p}\n`;
   });
 
-  // Agregamos comentarios si existen
   if (comentarios) {
-    mensaje += `%0A*Comentarios:* ${encodeURIComponent(comentarios)}`;
+    mensaje += `\n*Comentarios:* ${comentarios}`;
   }
 
-  // Abrimos WhatsApp
-  const url = `https://wa.me/${numeroDestino}?text=${mensaje}`;
+  const mensajeCodificado = encodeURIComponent(mensaje);
+  const url = `https://wa.me/${numeroDestino}?text=${mensajeCodificado}`;
   window.open(url, '_blank');
 });
-
 </script>
 
 
 </body>
 </html>
+
 
 
 
