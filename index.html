@@ -276,51 +276,53 @@
   });
 
   document.getElementById('pedidoForm').addEventListener('submit', e => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const nombre = document.getElementById('nombre').value.trim();
-    const mesa = document.getElementById('mesa').value.trim();
-    const comentarios = document.getElementById('comentarios').value.trim();
-    const numeroDestino = document.getElementById('numeroDestino').value.trim().replace(/\D/g, '');
+  const nombre = document.getElementById('nombre').value.trim();
+  const mesa = document.getElementById('mesa').value.trim();
+  const comentarios = document.getElementById('comentarios').value.trim();
+  const numeroDestino = document.getElementById('numeroDestino').value.trim().replace(/\D/g, '');
 
-    if (!nombre || !mesa || !numeroDestino) {
-      alert('Por favor completá nombre, mesa/camastro y número de WhatsApp.');
-      return;
-    }
+  const platillosSeleccionados = [...document.querySelectorAll('input[name=platillo]:checked')]
+    .map(input => input.value);
 
-    // ✅ Corrección: recolectar platillos correctamente
-    const platillosSeleccionados = [];
-    document.querySelectorAll('input[name="platillo"]').forEach(input => {
-      if (input.checked) {
-        platillosSeleccionados.push(input.value);
-      }
-    });
+  if (!nombre || !mesa || !numeroDestino) {
+    alert('Por favor completá nombre, mesa/camastro y número de WhatsApp.');
+    return;
+  }
 
-    if (platillosSeleccionados.length === 0) {
-      alert('Por favor seleccioná al menos un platillo.');
-      return;
-    }
+  if (platillosSeleccionados.length === 0) {
+    alert('Por favor seleccioná al menos un platillo.');
+    return;
+  }
 
-    // 🟢 Armar mensaje de WhatsApp
-    let mensaje = `*Pedido Maia Restaurante & Beach Club*%0A`;
-    mensaje += `*Nombre:* ${encodeURIComponent(nombre)}%0A`;
-    mensaje += `*Mesa/Camastro:* ${encodeURIComponent(mesa)}%0A`;
-    mensaje += `*Pedido:*%0A`;
-    platillosSeleccionados.forEach(p => {
-      mensaje += `- ${encodeURIComponent(p)}%0A`;
-    });
-    if (comentarios) {
-      mensaje += `*Comentarios:* ${encodeURIComponent(comentarios)}%0A`;
-    }
+  // Armamos el mensaje
+  let mensaje = `*Pedido Maia Restaurante & Beach Club*%0A`;
+  mensaje += `*Nombre:* ${encodeURIComponent(nombre)}%0A`;
+  mensaje += `*Mesa/Camastro:* ${encodeURIComponent(mesa)}%0A`;
+  mensaje += `*Pedido:*%0A`;
 
-    const url = `https://wa.me/${numeroDestino}?text=${mensaje}`;
-    window.open(url, '_blank');
+  // Agregamos los platillos
+  platillosSeleccionados.forEach(p => {
+    mensaje += `- ${encodeURIComponent(p)}%0A`;
   });
+
+  // Agregamos comentarios si existen
+  if (comentarios) {
+    mensaje += `%0A*Comentarios:* ${encodeURIComponent(comentarios)}`;
+  }
+
+  // Abrimos WhatsApp
+  const url = `https://wa.me/${numeroDestino}?text=${mensaje}`;
+  window.open(url, '_blank');
+});
+
 </script>
 
 
 </body>
 </html>
+
 
 
 
