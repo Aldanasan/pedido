@@ -258,14 +258,14 @@
 </form>
 
 <script>
-  // Platillos no disponibles para bloquear (escribí exactamente igual que en value)
+  // Platillos no disponibles para bloquear
   const platillosNoDisponibles = [
-    // Por ejemplo: "Hotcakes con coco", "Tacos de cochinita"
+    // Ejemplo: "Hotcakes con coco"
   ];
 
   window.addEventListener('DOMContentLoaded', () => {
     platillosNoDisponibles.forEach(nombre => {
-      const inputs = document.querySelectorAll('input[type=checkbox][value="'+nombre+'"]');
+      const inputs = document.querySelectorAll(`input[type="checkbox"][value="${nombre}"]`);
       inputs.forEach(input => {
         input.disabled = true;
         const label = input.parentElement;
@@ -281,24 +281,27 @@
     const nombre = document.getElementById('nombre').value.trim();
     const mesa = document.getElementById('mesa').value.trim();
     const comentarios = document.getElementById('comentarios').value.trim();
-    const numeroDestino = document.getElementById('numeroDestino').value.trim();
+    const numeroDestino = document.getElementById('numeroDestino').value.trim().replace(/\D/g, '');
 
-    if(!nombre || !mesa || !numeroDestino){
-      alert('Por favor completá nombre, mesa/camastro y número de WhatsApp para enviar el pedido.');
+    if (!nombre || !mesa || !numeroDestino) {
+      alert('Por favor completá nombre, mesa/camastro y número de WhatsApp.');
       return;
     }
 
-    const platillosSeleccionados = [...document.querySelectorAll('input[name=platillo]:checked')]
-      .map(input => input.value);
+    // ✅ Corrección: recolectar platillos correctamente
+    const platillosSeleccionados = [];
+    document.querySelectorAll('input[name="platillo"]').forEach(input => {
+      if (input.checked) {
+        platillosSeleccionados.push(input.value);
+      }
+    });
 
-    if(platillosSeleccionados.length === 0){
+    if (platillosSeleccionados.length === 0) {
       alert('Por favor seleccioná al menos un platillo.');
       return;
     }
 
-    // Limpiar número (quitar espacios, signos, etc)
-    const numeroLimpio = numeroDestino.replace(/\D/g, '');
-
+    // 🟢 Armar mensaje de WhatsApp
     let mensaje = `*Pedido Maia Restaurante & Beach Club*%0A`;
     mensaje += `*Nombre:* ${encodeURIComponent(nombre)}%0A`;
     mensaje += `*Mesa/Camastro:* ${encodeURIComponent(mesa)}%0A`;
@@ -306,17 +309,19 @@
     platillosSeleccionados.forEach(p => {
       mensaje += `- ${encodeURIComponent(p)}%0A`;
     });
-    if(comentarios){
+    if (comentarios) {
       mensaje += `*Comentarios:* ${encodeURIComponent(comentarios)}%0A`;
     }
 
-    const url = `https://wa.me/${numeroLimpio}?text=${mensaje}`;
+    const url = `https://wa.me/${numeroDestino}?text=${mensaje}`;
     window.open(url, '_blank');
   });
 </script>
 
+
 </body>
 </html>
+
 
 
 
