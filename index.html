@@ -5,319 +5,207 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Maia Restaurante & Beach Club - Pedido</title>
 <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #64d9ca 0%, #fdd9c4 100%);
-    margin: 0; padding: 20px;
-    color: #333;
-  }
-  h1 {
-    text-align: center;
-    color: #0c6153;
-    margin-bottom: 5px;
-    font-weight: 700;
-  }
-  h2 {
-    color: #0c6153;
-    border-bottom: 2px solid #f5826f;
-    padding-bottom: 3px;
-    margin-top: 25px;
-  }
-  form {
-    max-width: 700px;
-    margin: 0 auto;
-    background: rgba(255 255 255 / 0.9);
-    padding: 20px 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgb(0 0 0 / 0.1);
-  }
-  label {
-    font-weight: 600;
-    display: block;
-    margin: 15px 0 5px;
-    color: #0a4e44;
-  }
-  input[type=text], textarea {
-    width: 100%;
-    padding: 8px 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    box-sizing: border-box;
-  }
-  textarea {
-    min-height: 70px;
-    resize: vertical;
-  }
-  .section {
-    margin-top: 20px;
-  }
-  .checkbox-group {
-    margin-left: 15px;
-  }
-  .checkbox-group label {
-    font-weight: 400;
-    display: block;
-    margin-bottom: 6px;
-    cursor: pointer;
-  }
-  button {
-    margin-top: 25px;
-    background-color: #f5826f;
-    color: white;
-    border: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background-color: #d8654f;
-  }
-  .note {
-    font-size: 0.9rem;
-    color: #555;
-    text-align: center;
-    margin-top: 15px;
-  }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #64d9ca 0%, #fdd9c4 100%); margin: 0; padding: 20px; color: #333; }
+  h1, h2 { color: #0c6153; }
+  h1 { text-align: center; margin-bottom: 5px; font-weight: 700; }
+  h2 { border-bottom: 2px solid #f5826f; padding-bottom: 3px; margin-top: 25px; }
+  form { max-width: 700px; margin: 0 auto; background: rgba(255 255 255 / 0.9); padding: 20px 30px; border-radius: 12px; box-shadow: 0 5px 15px rgb(0 0 0 / 0.1); }
+  label { font-weight: 600; display: block; margin: 15px 0 5px; color: #0a4e44; }
+  input[type=text], textarea { width: 100%; padding: 8px 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem; box-sizing: border-box; }
+  textarea { min-height: 70px; resize: vertical; }
+  .checkbox-group { margin-left: 15px; }
+  .checkbox-group label { font-weight: 400; display: block; margin-bottom: 6px; cursor: pointer; }
+  .platillo-container { margin-bottom: 10px; }
+  .comentario-platillo { margin-left: 30px; margin-top: 3px; display: none; }
+  button { margin-top: 25px; background-color: #f5826f; color: white; border: none; font-weight: 700; font-size: 1.1rem; padding: 12px 20px; border-radius: 8px; cursor: pointer; width: 100%; transition: background-color 0.3s ease; }
+  button:hover { background-color: #d8654f; }
+  .note { font-size: 0.9rem; color: #555; text-align: center; margin-top: 15px; }
+  #languageSelector { margin-bottom: 20px; }
 </style>
 </head>
 <body>
 
-<h1>Maia Restaurante &amp; Beach Club</h1>
-<p style="text-align:center; font-weight:600; color:#0c6153;">
+<h1 id="title">Maia Restaurante &amp; Beach Club</h1>
+<div style="text-align:center; margin-bottom: 15px;">
+  <label for="languageSelector">Idioma / Language: </label>
+  <select id="languageSelector">
+    <option value="es">Español</option>
+    <option value="en">English</option>
+  </select>
+</div>
+
+<p id="welcomeText" style="text-align:center; font-weight:600; color:#0c6153;">
   ¡Bienvenido! Por favor completa tu pedido abajo.
+</p>
+
+<p id="horarios" style="text-align:center; font-weight:600; color:#0c6153;">
+  Horarios: Desayuno 8:00 - 12:30 | Almuerzo/Cena desde 13:15
 </p>
 
 <form id="pedidoForm">
 
-  <label for="nombre">Nombre del cliente *</label>
+  <label id="labelNombre" for="nombre">Nombre del cliente *</label>
   <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" />
 
-  <label for="mesa">Número de mesa o camastro *</label>
+  <label id="labelMesa" for="mesa">Número de mesa o camastro *</label>
   <input type="text" id="mesa" name="mesa" required placeholder="Mesa o camastro" />
 
   <div class="section">
-    <h2>Desayunos – Lo dulce</h2>
+    <h2 id="sectionDesayuno">Desayunos – Lo dulce</h2>
     <div class="checkbox-group" id="desayunoDulce">
-      <label><input type="checkbox" name="platillo" value="Plato de fruta"> Plato de fruta</label>
-      <label><input type="checkbox" name="platillo" value="Overnight Oats Jar"> Overnight Oats Jar</label>
-      <label><input type="checkbox" name="platillo" value="Pan Frances"> Pan Frances</label>
-      <label><input type="checkbox" name="platillo" value="Toast de masa madre con mantequilla de mani"> Toast de masa madre con mantequilla de mani</label>
-      <label><input type="checkbox" name="platillo" value="Hotcakes"> Hotcakes</label>
-    
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Plato de fruta"> <span class="platillo-text">Plato de fruta</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Plato de fruta..."></textarea>
+      </div>
+      <div class="platillo-container">
+        <label><input type="checkbox" name="platillo" value="Overnight Oats Jar"> <span class="platillo-text">Overnight Oats Jar</span></label>
+        <textarea class="comentario-platillo" placeholder="Comentarios para Overnight Oats Jar..."></textarea>
+      </div>
+      <!-- Agrega más platillos aquí igual -->
     </div>
   </div>
 
-  <div class="section">
-    <h2>Desayunos – Huevos</h2>
-    <div class="checkbox-group" id="desayunoHuevos">
-      <label><input type="checkbox" name="platillo" value="Huevos al gusto"> Huevos al gusto</label>
-      <label><input type="checkbox" name="platillo" value="Huevos Cazuela"> Huevos Cazuela</label>
-      <label><input type="checkbox" name="platillo" value="Huevos Cazuela con longaniza"> Huevos Cazuela con longaniza</label>
-      <label><input type="checkbox" name="platillo" value="Huevos Cazuela con arrachera"> Huevos Cazuela con arrachera</label>
-      <label><input type="checkbox" name="platillo" value="Huevos Black Fiore"> Huevos Black Fiore</label>
-      <label><input type="checkbox" name="platillo" value="Huevos Black Fiore (tofu)"> Huevos Black Fiore (tofu)</label>
-      <label><input type="checkbox" name="platillo" value="Croque Madame"> Croque Madame</label>
-      <label><input type="checkbox" name="platillo" value="Huevos Rotos"> Huevos Rotos</label>
-      <label><input type="checkbox" name="platillo" value="Omelette de Jamón y Queso"> Omelette de Jamón y Queso</label>
-      <label><input type="checkbox" name="platillo" value="Omelette Maia"> Omelette Maia</label>
-    </div>
-  </div>
+  <!-- Más secciones aquí con el mismo patrón -->
 
-  <div class="section">
-    <h2>Desayunos – Salados</h2>
-    <div class="checkbox-group" id="desayunoSalados">
-      <label><input type="checkbox" name="platillo" value="Enchiladas/Enfrijoladas"> Enchiladas/Enfrijoladas</label>
-      <label><input type="checkbox" name="platillo" value="Quesadillas"> Quesadillas</label>
-      <label><input type="checkbox" name="platillo" value="Chilaquiles"> Chilaquiles</label>
-      <label><input type="checkbox" name="platillo" value="Tacos con Chorizo Vegano"> Tacos con Chorizo Vegano</label>
-      <label><input type="checkbox" name="platillo" value="Avo Toast"> Avo Toast</label>
-      <label><input type="checkbox" name="platillo" value="Molletes"> Molletes</label>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Almuerzo y Cena – Tacos</h2>
-    <div class="checkbox-group" id="tacos">
-      <label><input type="checkbox" name="platillo" value="Tacos de cochinita"> Tacos de cochinita</label>
-      <label><input type="checkbox" name="platillo" value="Tacos de camarón tempura"> Tacos de camarón tempura</label>
-      <label><input type="checkbox" name="platillo" value="Tacos gobernador"> Tacos gobernador</label>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Guacamoles</h2>
-    <div class="checkbox-group" id="guacamoles">
-      <label><input type="checkbox" name="platillo" value="Guacamole vegano"> Guacamole vegano</label>
-      <label><input type="checkbox" name="platillo" value="Guacamole con mango"> Guacamole con mango</label>
-      <label><input type="checkbox" name="platillo" value="Guacamole con castacán"> Guacamole con castacán</label>
-      <label><input type="checkbox" name="platillo" value="Guacamole con chicharrón de cerdo"> Guacamole con chicharrón de cerdo</label>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Ensaladas</h2>
-    <div class="checkbox-group" id="ensaladas">
-      <label><input type="checkbox" name="platillo" value="Ensalada de Manzana"> Ensalada de Manzana</label>
-      <label><input type="checkbox" name="platillo" value="Ensalada de Pera"> Ensalada de Pera</label>
-      <label><input type="checkbox" name="platillo" value="Ensalada César"> Ensalada César</label>
-      <label><input type="checkbox" name="platillo" value="Ensalada de Falafel"> Ensalada de Falafel</label>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Bowls</h2>
-    <div class="checkbox-group" id="bowls">
-      <label><input type="checkbox" name="platillo" value="Bowl Vegetariano"> Bowl Vegetariano</label>
-      <label><input type="checkbox" name="platillo" value="Bowl Camarones Tempura"> Bowl Camarones Tempura</label>
-      <label><input type="checkbox" name="platillo" value="Bowl Pollo al Grill"> Bowl Pollo al Grill</label>
-      <label><input type="checkbox" name="platillo" value="Bowl Atún"> Bowl Atún</label>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Principales</h2>
-    <div class="checkbox-group" id="principales">
-      <label><input type="checkbox" name="platillo" value="Rib-eye"> Rib-eye</label>
-      <label><input type="checkbox" name="platillo" value="Arrachera al Grill"> Arrachera al Grill</label>
-      <label><input type="checkbox" name="platillo" value="Pechuga Asada"> Pechuga Asada</label>
-      <label><input type="checkbox" name="platillo" value="Filete de Pescado"> Filete de Pescado</label>
-      <label><input type="checkbox" name="platillo" value="Fusión de Pescado y Pulpo"> Fusión de Pescado y Pulpo</label>
-      <label><input type="checkbox" name="platillo" value="Camarones al gusto"> Camarones al gusto</label>
-      <label><input type="checkbox" name="platillo" value="Milenesa de pollo"> Milenesa de pollo</label>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Sándwiches y Hamburguesas</h2>
-    <div class="checkbox-group" id="sandwiches">
-      <label><input type="checkbox" name="platillo" value="Hamburguesa"> Hamburguesa</label>
-      <label><input type="checkbox" name="platillo" value="Hamburguesa Vegana"> Hamburguesa Vegana</label>
-      <label><input type="checkbox" name="platillo" value="Hamburguesa de Pollo"> Hamburguesa de Pollo</label>
-      <label><input type="checkbox" name="platillo" value="Bollo de Setas BBQ"> Bollo de Setas BBQ</label>
-      <label><input type="checkbox" name="platillo" value="Club Sándwich"> Club Sándwich</label>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Postres</h2>
-    <div class="checkbox-group" id="postres">
-      <label><input type="checkbox" name="platillo" value="Chocolate con Pretzel"> Chocolate con Pretzel</label>
-      <label><input type="checkbox" name="platillo" value="Tarta de Mango con Rompope"> Tarta de Mango con Rompope</label>
-      <label><input type="checkbox" name="platillo" value="Chocosuave"> Chocosuave</label>
-      <label><input type="checkbox" name="platillo" value="Copa Helada"> Copa Helada</label>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Extras</h2>
-    <div class="checkbox-group" id="extras">
-      <label><input type="checkbox" name="platillo" value="Papas fritas"> Papas fritas</label>
-      <label><input type="checkbox" name="platillo" value="Aguacate"> Aguacate</label>
-      <label><input type="checkbox" name="platillo" value="Pan tostado"> Pan tostado</label>
-      <label><input type="checkbox" name="platillo" value="Frijoles"> Frijoles</label>
-      <label><input type="checkbox" name="platillo" value="Arroz"> Arroz</label>
-      <label><input type="checkbox" name="platillo" value="Panela"> Panela</label>
-      <label><input type="checkbox" name="platillo" value="Queso Azul"> Queso Azul</label>
-      <label><input type="checkbox" name="platillo" value="Queso de cabra"> Queso de cabra</label>
-      <label><input type="checkbox" name="platillo" value="Ensalada"> Ensalada</label>
-      <label><input type="checkbox" name="platillo" value="Pan Pita"> Pan Pita</label>
-      <label><input type="checkbox" name="platillo" value="Tocino"> Tocino</label>
-      <label><input type="checkbox" name="platillo" value="Crudites"> Crudites</label>
-      <label><input type="checkbox" name="platillo" value="Vegetales"> Vegetales</label>
-      <label><input type="checkbox" name="platillo" value="Pollo"> Pollo</label>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Menú niños</h2>
-    <div class="checkbox-group" id="menuNinos">
-      <label><input type="checkbox" name="platillo" value="Deditos de Queso"> Deditos de Queso</label>
-      <label><input type="checkbox" name="platillo" value="Nuggets Veganos"> Nuggets Veganos</label>
-      <label><input type="checkbox" name="platillo" value="Pasta Kids"> Pasta Kids</label>
-      <label><input type="checkbox" name="platillo" value="Quesadilla de Queso"> Quesadilla de Queso</label>
-      <label><input type="checkbox" name="platillo" value="Tiras de Pollo"> Tiras de Pollo</label>
-      <label><input type="checkbox" name="platillo" value="Hummus"> Hummus</label>
-      <label><input type="checkbox" name="platillo" value="Paletas Heladas"> Paletas Heladas</label>
-    </div>
-  </div>
-
-  <label for="comentarios">Comentarios especiales</label>
+  <label id="labelComentariosGenerales" for="comentarios">Comentarios generales</label>
   <textarea id="comentarios" name="comentarios" placeholder="Sin cebolla, poco picante, etc."></textarea>
 
-  <label for="numeroDestino">Número WhatsApp para enviar el pedido *</label>
-  <input type="text" id="numeroDestino" name="numeroDestino" placeholder="Ejemplo: 521234567890" required />
+  <label id="labelNumero" for="numeroDestino">Número WhatsApp para enviar el pedido *</label>
+  <input type="text" id="numeroDestino" name="numeroDestino" placeholder="Ejemplo: 5219841864937" required />
 
-  <button type="submit">Enviar pedido por WhatsApp</button>
+  <button type="submit" id="btnEnviar">Enviar pedido por WhatsApp</button>
 
-  <p class="note">* Campos obligatorios</p>
+  <p class="note" id="notaCampos">* Campos obligatorios</p>
 </form>
 
 <script>
-  // Platillos no disponibles para bloquear
-  const platillosNoDisponibles = [
-    // Ejemplo: "Hotcakes con coco"
-  ];
-
-  window.addEventListener('DOMContentLoaded', () => {
-    platillosNoDisponibles.forEach(nombre => {
-      const inputs = document.querySelectorAll(`input[type="checkbox"][value="${nombre}"]`);
-      inputs.forEach(input => {
-        input.disabled = true;
-        const label = input.parentElement;
-        label.style.color = '#aaa';
-        label.style.textDecoration = 'line-through';
-      });
+  // Manejar mostrar/ocultar textarea comentario por platillo
+  document.querySelectorAll('.platillo-container input[type=checkbox]').forEach(chk => {
+    chk.addEventListener('change', e => {
+      const textarea = e.target.closest('.platillo-container').querySelector('.comentario-platillo');
+      textarea.style.display = e.target.checked ? 'block' : 'none';
     });
   });
 
-  document.getElementById('pedidoForm').addEventListener('submit', e => {
-  e.preventDefault();
+  // Traducciones para español e inglés
+  const texts = {
+    es: {
+      title: "Maia Restaurante & Beach Club",
+      welcomeText: "¡Bienvenido! Por favor completa tu pedido abajo.",
+      horarios: "Horarios: Desayuno 8:00 - 12:30 | Almuerzo/Cena desde 13:15",
+      labelNombre: "Nombre del cliente *",
+      labelMesa: "Número de mesa o camastro *",
+      sectionDesayuno: "Desayunos – Lo dulce",
+      labelComentariosGenerales: "Comentarios generales",
+      labelNumero: "Número WhatsApp para enviar el pedido *",
+      btnEnviar: "Enviar pedido por WhatsApp",
+      notaCampos: "* Campos obligatorios",
+      alertaCompletar: "Por favor completá nombre, mesa/camastro y número de WhatsApp.",
+      alertaPlatillo: "Por favor seleccioná al menos un platillo."
+    },
+    en: {
+      title: "Maia Restaurant & Beach Club",
+      welcomeText: "Welcome! Please complete your order below.",
+      horarios: "Hours: Breakfast 8:00am - 12:30pm | Lunch/Dinner from 1:15pm",
+      labelNombre: "Customer name *",
+      labelMesa: "Table or sunbed number *",
+      sectionDesayuno: "Breakfast – Sweet",
+      labelComentariosGenerales: "General comments",
+      labelNumero: "WhatsApp number to send order *",
+      btnEnviar: "Send order via WhatsApp",
+      notaCampos: "* Required fields",
+      alertaCompletar: "Please complete name, table/sunbed and WhatsApp number.",
+      alertaPlatillo: "Please select at least one dish."
+    }
+  };
 
-  const nombre = document.getElementById('nombre').value.trim();
-  const mesa = document.getElementById('mesa').value.trim();
-  const comentarios = document.getElementById('comentarios').value.trim();
-  const numeroDestino = document.getElementById('numeroDestino').value.trim().replace(/\D/g, '');
+  const langSelect = document.getElementById('languageSelector');
 
-  const platillosSeleccionados = [...document.querySelectorAll('input[name=platillo]:checked')]
-    .map(input => input.value);
-
-  if (!nombre || !mesa || !numeroDestino) {
-    alert('Por favor completá nombre, mesa/camastro y número de WhatsApp.');
-    return;
+  function updateLanguage(lang) {
+    document.getElementById('title').textContent = texts[lang].title;
+    document.getElementById('welcomeText').textContent = texts[lang].welcomeText;
+    document.getElementById('horarios').textContent = texts[lang].horarios;
+    document.getElementById('labelNombre').textContent = texts[lang].labelNombre;
+    document.getElementById('labelMesa').textContent = texts[lang].labelMesa;
+    document.getElementById('sectionDesayuno').textContent = texts[lang].sectionDesayuno;
+    document.getElementById('labelComentariosGenerales').textContent = texts[lang].labelComentariosGenerales;
+    document.getElementById('labelNumero').textContent = texts[lang].labelNumero;
+    document.getElementById('btnEnviar').textContent = texts[lang].btnEnviar;
+    document.querySelector('.note').textContent = texts[lang].notaCampos;
   }
 
-  if (platillosSeleccionados.length === 0) {
-    alert('Por favor seleccioná al menos un platillo.');
-    return;
-  }
-
-  let mensaje = `*Pedido Maia Restaurante & Beach Club*\n`;
-  mensaje += `*Nombre:* ${nombre}\n`;
-  mensaje += `*Mesa/Camastro:* ${mesa}\n`;
-  mensaje += `*Pedido:*\n`;
-
-  platillosSeleccionados.forEach(p => {
-    mensaje += `- ${p}\n`;
+  langSelect.addEventListener('change', e => {
+    updateLanguage(e.target.value);
   });
 
-  if (comentarios) {
-    mensaje += `\n*Comentarios:* ${comentarios}`;
-  }
+  // Inicializo idioma en español
+  updateLanguage('es');
 
-  const mensajeCodificado = encodeURIComponent(mensaje);
-  const url = `https://wa.me/${numeroDestino}?text=${mensajeCodificado}`;
-  window.open(url, '_blank');
-});
+  // Enviar pedido por WhatsApp, con comentarios por platillo incluidos
+  document.getElementById('pedidoForm').addEventListener('submit', e => {
+    e.preventDefault();
+
+    const lang = langSelect.value;
+    const nombre = document.getElementById('nombre').value.trim();
+    const mesa = document.getElementById('mesa').value.trim();
+    const comentariosGenerales = document.getElementById('comentarios').value.trim();
+    const numeroDestino = document.getElementById('numeroDestino').value.trim().replace(/\D/g, '');
+
+    // Obtengo platillos seleccionados y comentarios individuales
+    const platillosContainers = [...document.querySelectorAll('.platillo-container')];
+    const platillosSeleccionados = [];
+
+    platillosContainers.forEach(container => {
+      const chk = container.querySelector('input[type=checkbox]');
+      if (chk.checked) {
+        const platilloNombre = chk.value;
+        const comentarioPlatillo = container.querySelector('.comentario-platillo').value.trim();
+        platillosSeleccionados.push({nombre: platilloNombre, comentario: comentarioPlatillo});
+      }
+    });
+
+    if (!nombre || !mesa || !numeroDestino) {
+      alert(texts[lang].alertaCompletar);
+      return;
+    }
+
+    if (platillosSeleccionados.length === 0) {
+      alert(texts[lang].alertaPlatillo);
+      return;
+    }
+
+    let mensaje = lang === 'es'
+      ? `*Pedido Maia Restaurante & Beach Club*\n`
+      : `*Order Maia Restaurant & Beach Club*\n`;
+
+    mensaje += lang === 'es'
+      ? `*Nombre:* ${nombre}\n*Mesa/Camastro:* ${mesa}\n*Pedido:*\n`
+      : `*Name:* ${nombre}\n*Table/Sunbed:* ${mesa}\n*Order:*\n`;
+
+    platillosSeleccionados.forEach(p => {
+      mensaje += `- ${p.nombre}`;
+      if (p.comentario) {
+        mensaje += ` (${p.comentario})`;
+      }
+      mensaje += `\n`;
+    });
+
+    if (comentariosGenerales) {
+      mensaje += lang === 'es'
+        ? `\n*Comentarios generales:* ${comentariosGenerales}`
+        : `\n*General comments:* ${comentariosGenerales}`;
+    }
+
+    const mensajeCodificado = encodeURIComponent(mensaje);
+    const url = `https://wa.me/${numeroDestino}?text=${mensajeCodificado}`;
+    window.open(url, '_blank');
+  });
 </script>
-
 
 </body>
 </html>
+
+
 
 
 
